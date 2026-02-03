@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita & Pengumuman - SMK Wachid Hasyim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #10b981;
+            transform: translateY(-2px);
+        }
+
+        .card-news {
+            transition: all 0.3s ease;
+        }
+
+        .card-news:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 15px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <script src="assets/js/navbar.js"></script>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/LOGO_SMK-removebg-preview.png" alt="Logo SMK Wachid Hasyim"
+                        class="w-12 h-12 object-contain">
+
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">SMK Wachid Hasyim Palengaan</h1>
+                        <p class="text-xs text-gray-600">Religius, Berkarakter, Unggul</p>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium">Beranda</a>
+                    <a href="Profil.html" class="nav-link text-gray-700 font-medium">Profil</a>
+                    <a href="manajeman.html" class="nav-link text-gray-700 font-medium">Manajeman</a>
+                    <a href="fasilitas.html" class="nav-link text-gray-700 font-medium">Fasilitas</a>
+                    <a href="berita.html"
+                        class="nav-link text-green-600 font-bold border-b-2 border-green-600">Berita</a>
+                    <a href="ppdb.html" class="nav-link text-gray-700 font-medium">PPDB</a>
+                    <a href="kontak.html" class="nav-link text-gray-700 font-medium">Kontak</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700 hover:text-green-600 transition" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu hidden lg:hidden pb-4 transition-all duration-300">
+                <a href="index.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Beranda</a>
+                <a href="Profil.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Profil</a>
+                <a href="manajeman.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Manajeman</a>
+                <a href="fasilitas.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Fasilitas</a>
+                <a href="berita.html"
+                    class="block py-2 text-green-600 font-bold pl-4 border-l-4 border-green-600 bg-green-50">Berita</a>
+                <a href="ppdb.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">PPDB</a>
+                <a href="kontak.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Pengumuman & Berita</h1>
+            <p class="text-lg md:text-xl text-green-100 max-w-2xl mx-auto">
+                Informasi terbaru seputar kegiatan, prestasi, dan pengumuman sekolah
+            </p>
+        </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+
+            <!-- Filter/Category -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100"
+                id="filterContainer">
+                <button onclick="filterNews('Semua')"
+                    class="filter-btn active px-6 py-2 bg-green-600 text-white rounded-full shadow-md text-sm font-medium transition cursor-pointer"
+                    data-category="Semua">Semua</button>
+                <button onclick="filterNews('Pengumuman')"
+                    class="filter-btn px-6 py-2 bg-white text-gray-600 hover:bg-gray-50 rounded-full shadow-sm border border-gray-200 text-sm font-medium transition cursor-pointer"
+                    data-category="Pengumuman">Pengumuman</button>
+                <button onclick="filterNews('Kegiatan')"
+                    class="filter-btn px-6 py-2 bg-white text-gray-600 hover:bg-gray-50 rounded-full shadow-sm border border-gray-200 text-sm font-medium transition cursor-pointer"
+                    data-category="Kegiatan">Kegiatan</button>
+                <button onclick="filterNews('Prestasi')"
+                    class="filter-btn px-6 py-2 bg-white text-gray-600 hover:bg-gray-50 rounded-full shadow-sm border border-gray-200 text-sm font-medium transition cursor-pointer"
+                    data-category="Prestasi">Prestasi</button>
+            </div>
+
+            <!-- News Grid Container -->
+            <div id="newsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News items will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+                            <img src="assets/img/LOGO_SMK-removebg-preview.png">
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold">SMK Wachid Hasyim Palengaan</h4>
+                            <p class="text-xs text-white-400">Religius, Berkarakter, Unggul</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="manajeman.html" class="hover:text-white transition">Manajemen</a></li>
+                        <li><a href="ppdb.html" class="hover:text-white transition">PPDB</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Program</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li>Teknik Komputer & Jaringan</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Palengaan, Pamekasan, Jawatimur</li>
+                        <li><i class="fas fa-phone mr-2"></i>0819-3925-7300</li>
+                        <li><i class="fas fa-envelope mr-2"></i>smkwh.plg@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white-800 pt-8 text-center text-white-400 text-sm">
+                <p>&copy; 2026 SMK Wachid Hasim. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/news-data.js"></script>
+    <script>
+        AOS.init();
+
+        function renderNews(category) {
+            const grid = document.getElementById('newsGrid');
+            grid.innerHTML = ''; // Clear current content
+
+            const filteredData = category === 'Semua'
+                ? newsData
+                : newsData.filter(item => item.category === category);
+
+            filteredData.forEach((item, index) => {
+                const badgecolors = {
+                    'Pengumuman': 'bg-blue-500',
+                    'Kegiatan': 'bg-orange-500',
+                    'Prestasi': 'bg-green-600'
+                };
+                const badgeColor = badgecolors[item.category] || 'bg-gray-500';
+
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl overflow-hidden shadow-lg card-news';
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index * 100) + 200); // Stagger animations
+
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden">
+                        <span class="category-badge ${badgeColor}">${item.category}</span>
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>${item.date}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 hover:text-green-600 transition cursor-pointer">
+                            <a href="detail-berita.html?id=${item.id}">${item.title}</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            ${item.excerpt}
+                        </p>
+                        <a href="detail-berita.html?id=${item.id}" class="inline-flex items-center text-green-600 font-semibold hover:text-green-800">
+                            Baca Selengkapnya
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterNews(category) {
+            // Update button styles
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.classList.remove('bg-white', 'text-gray-600');
+                    btn.classList.add('bg-green-600', 'text-white');
+                } else {
+                    btn.classList.add('bg-white', 'text-gray-600');
+                    btn.classList.remove('bg-green-600', 'text-white');
+                }
+            });
+
+            renderNews(category);
+        }
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNews('Semua');
+        });
+    </script>
+</body>
+
+</html>

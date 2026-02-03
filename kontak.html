@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - SMK Wachid Hasyim Palengaan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #10b981;
+            transform: translateY(-2px);
+        }
+
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <script src="assets/js/navbar.js"></script>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/LOGO_SMK-removebg-preview.png" alt="Logo SMK Wachid Hasyim"
+                        class="w-12 h-12 object-contain">
+
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">SMK Wachid Hasyim Palengaan</h1>
+                        <p class="text-xs text-gray-600">Religius, Berkarakter, Unggul</p>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium">Beranda</a>
+                    <a href="Profil.html" class="nav-link text-gray-700 font-medium">Profil</a>
+                    <a href="manajeman.html" class="nav-link text-gray-700 font-medium">Manajeman</a>
+                    <a href="fasilitas.html" class="nav-link text-gray-700 font-medium">Fasilitas</a>
+                    <a href="berita.html" class="nav-link text-gray-700 font-medium">Berita</a>
+                    <a href="ppdb.html" class="nav-link text-gray-700 font-medium">PPDB</a>
+                    <a href="kontak.html" class="nav-link text-gray-700 font-medium">Kontak</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700 hover:text-green-600 transition" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu hidden lg:hidden pb-4 transition-all duration-300">
+                <a href="index.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Beranda</a>
+                <a href="Profil.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Profil</a>
+                <a href="manajeman.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Manajeman</a>
+                <a href="fasilitas.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Fasilitas</a>
+                <a href="berita.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Berita</a>
+                <a href="ppdb.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">PPDB</a>
+                <a href="kontak.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Kontak</a>
+            </div>
+
+
+            <!-- Hero Section -->
+            <section class="bg-gradient-to-r from-green-600 to-green-700 text-white py-16">
+                <div class="max-w-7xl mx-auto px-4 text-center fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hubungi Kami</h1>
+                    <p class="text-lg md:text-xl text-green-100 max-w-2xl mx-auto">
+                        Kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui berbagai saluran komunikasi
+                        yang tersedia.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- Kontak Section -->
+            <section class="py-16 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4">
+                    <!-- Contact Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        <!-- Alamat Card -->
+                        <div class="contact-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl text-center">
+
+                            <a href="https://www.google.com/maps?q=-7.076210828544437,113.45248463016799"
+                                target="_blank" class="block">
+
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                                </div>
+
+                                <h4 class="font-bold text-gray-800 text-lg mb-2">Alamat</h4>
+
+                                <p class="text-gray-600 text-sm">
+                                    SMK Miftahul Ulum Kebun Baru<br>
+                                    Palengaan, Pamekasan, Jawa Timur
+                                </p>
+
+                            </a>
+                        </div>
+
+                        <div class="contact-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl text-center">
+                            <a href="https://wa.me/6281939257300" target="_blank" class="block">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fab fa-whatsapp text-white text-2xl"></i>
+                                </div>
+
+                                <h4 class="font-bold text-gray-800 text-lg mb-2">WhatsApp</h4>
+
+                                <p class="text-green-600 hover:text-green-700 text-sm font-medium">
+                                    0819-3925-7300
+                                </p>
+                            </a>
+
+                        </div>
+
+                        <!-- Telepon Card -->
+                        <div class="contact-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl text-center">
+                            <a href="tel:6281939257300" target="_blank" class="block">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-phone text-white text-2xl"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-lg mb-2">Telepon</h4>
+                                <p class="text-purple-600 hover:text-purple-700 text-sm font-medium">
+                                    081939257300
+                                </p>
+                            </a>
+                        </div>
+
+                        <!-- Email Card -->
+                        <div class="contact-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl text-center">
+                            <a href="mailto:smkwh.plg@gmail.com" target="_blank" class="block">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-envelope text-white text-2xl"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800 text-lg mb-2">Email</h4>
+                                <p class="text-red-600 hover:text-red-700 text-sm font-medium">
+                                    smkwh.plg@gmail.com
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Grid -->
+                    <div class="grid gap-8">
+
+                        <!-- Maps -->
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-map-marked-alt text-green-600 mr-2"></i>
+                                Lokasi Sekolah
+                            </h3>
+
+                            <div class="w-full h-64 rounded-lg overflow-hidden shadow-md">
+
+                                <iframe
+                                    src="https://www.google.com/maps?q=-7.076210828544437,113.45248463016799&output=embed"
+                                    class="w-full h-full border-0" allowfullscreen loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+
+                            </div>
+
+                            <!-- Tombol buka maps -->
+                            <div class="mt-4 text-center">
+                                <a href="https://www.google.com/maps?q=-7.076210828544437,113.45248463016799"
+                                    target="_blank" class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg
+              hover:bg-green-700 transition">
+                                    <i class="fas fa-directions mr-2"></i>
+                                    Buka di Google Maps
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-green-600 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+                                <img src="assets/img/LOGO_SMK-removebg-preview.png">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold">SMK Wachid Hasyim Palengaan</h4>
+                                <p class="text-xs text-white-400">Religius, Berkarakter, Unggul</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Menu Cepat</h4>
+                        <ul class="space-y-2 text-white-400 text-sm">
+                            <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                            <li><a href="manajeman.html" class="hover:text-white transition">Manajemen</a></li>
+                            <li><a href="ppdb.html" class="hover:text-white transition">PPDB</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Program</h4>
+                        <ul class="space-y-2 text-white-400 text-sm">
+                            <li>Teknik Komputer & Jaringan</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Kontak</h4>
+                        <ul class="space-y-2 text-white-400 text-sm">
+                            <li><i class="fas fa-map-marker-alt mr-2"></i>Palengaan, Pamekasan, Jawatimur</li>
+                            <li><i class="fas fa-phone mr-2"></i>0819-3925-7300</li>
+                            <li><i class="fas fa-envelope mr-2"></i>smkwh.plg@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white-800 pt-8 text-center text-white-400 text-sm">
+                    <p>&copy; 2026 SMK Wachid Hasim. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+
+</body>
+
+</html>

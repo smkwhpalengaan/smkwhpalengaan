@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen - SMK Wachid Hasyim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+        }
+
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .nav-link:hover {
+            color: #10b981;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .card-hover:hover::before {
+            left: 100%;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #66ea90 0%, #4ba29b 100%);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            border-radius: 2px;
+        }
+
+        .avatar-container {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .avatar-container:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .pulse-border {
+            animation: pulse-border 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-border {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+            }
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        .staff-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <script src="assets/js/navbar.js"></script>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-[99999] relative">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/LOGO_SMK-removebg-preview.png" alt="Logo SMK Wachid Hasyim"
+                        class="w-12 h-12 object-contain">
+
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">SMK Wachid Hasyim Palengaan</h1>
+                        <p class="text-xs text-gray-600">Religius, Berkarakter, Unggul</p>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium">Beranda</a>
+                    <a href="Profil.html" class="nav-link text-gray-700 font-medium">Profil</a>
+                    <a href="manajeman.html" class="nav-link text-gray-700 font-medium">Manajeman</a>
+                    <a href="fasilitas.html" class="nav-link text-gray-700 font-medium">Fasilitas</a>
+                    <a href="berita.html" class="nav-link text-gray-700 font-medium">Berita</a>
+                    <a href="ppdb.html" class="nav-link text-gray-700 font-medium">PPDB</a>
+                    <a href="kontak.html" class="nav-link text-gray-700 font-medium">Kontak</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700 hover:text-green-600 transition" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu"
+  class="mobile-menu lg:hidden fixed left-0 top-[72px] w-full bg-white shadow-lg z-[9999] pb-4">
+
+                <a href="index.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Beranda</a>
+                <a href="Profil.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Profil</a>
+                <a href="manajeman.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Manajeman</a>
+                <a href="fasilitas.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Fasilitas</a>
+                <a href="berita.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Berita</a>
+                <a href="ppdb.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">PPDB</a>
+                <a href="kontak.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Kontak</a>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-green-600 to-emerald-600 text-white py-16 px-4">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Manajemen Sekolah SMK Wachid Hasyim Palengaan</h1>
+                <p class="text-lg md:text-xl opacity-90">Tim profesional yang berdedikasi untuk kemajuan pendidikan
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 py-16">
+            <!-- Kepala Sekolah Section -->
+            <section class="mb-20">
+                <div data-aos="zoom-in" data-aos-duration="800" class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-3 section-title">Struktur Organisasi</h2>
+                </div>
+
+                <div data-aos="flip-up" data-aos-duration="1000" class="max-w-md mx-auto">
+                    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden card-hover pulse-border">
+                        <div class="gradient-bg h-32"></div>
+                        <div class="p-8 text-center -mt-16">
+                            <div class="avatar-container w-32 h-32 mx-auto mb-6 rounded-full bg-white p-1 shadow-xl">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/kepala.jpeg" alt="Kepala Sekolah"
+                                        class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">KH. Abd Satar, S.HI</h3>
+                            <p class="text-green-600 font-semibold text-lg mb-3">Kepala Sekolah</p>
+                            <div class="flex justify-center gap-3 mt-4">
+                                <a href="mailto:smkwh.plg@gmail.com" target="_blank"
+                                    class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition">
+                                    <i class="fas fa-envelope text-green-600"></i>
+                                </a>
+                                <a href="https://wa.me/6281939257300"
+                                    class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center hover:bg-purple-200 transition">
+                                    <i class="fas fa-phone text-green-600"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staf Section -->
+            <section class="mb-12">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Staf 1 -->
+                    <div data-aos="zoom-in" data-aos-delay="100"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/Tata Usaha.jpeg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Mohammad Suhari, S.Pd</h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Kepala TU</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 2 -->
+                    <div data-aos="zoom-in" data-aos-delay="200"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. suday.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Moh Sudi Yadi, M.Pd</h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Bendahara</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 3 -->
+                    <div data-aos="zoom-in" data-aos-delay="300"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. supandi.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Muhammad Supandi, S.Pd</h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Staf Administrasi</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 4 -->
+                    <div data-aos="zoom-in" data-aos-delay="400"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. inoenk 2.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Zainur Rohman, S.Kom</h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Kepala Jurusan</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 1 -->
+                    <div data-aos="zoom-in" data-aos-delay="100"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/Pak. toyyib.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Moh. Toyyibul Anam, S.Kom
+                            </h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Kepala Lab</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 2 -->
+                    <div data-aos="zoom-in" data-aos-delay="200"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. adi.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Supriyadi, S.Pd</h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Koor. BK</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 3 -->
+                    <div data-aos="zoom-in" data-aos-delay="300"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. muzanni.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Muzanni, ST</h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Waka. Kurikulum</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 4 -->
+                    <div data-aos="zoom-in" data-aos-delay="400"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. yuli.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Yulianto, S.Pd</h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Waka. Kesiswaan</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 1 -->
+                    <div data-aos="zoom-in" data-aos-delay="100"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. hamid.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Abd. Hamid, S.Pd</h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Waka. Sarpras</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 2 -->
+                    <div data-aos="zoom-in" data-aos-delay="200"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. rusdi.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Rusdi, S.Pd </h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Waka. Humas</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 2 -->
+                    <div data-aos="zoom-in" data-aos-delay="200"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. khoirun.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Khoirunnas, S.Pd </h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Wali Kelas X</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 2 -->
+                    <div data-aos="zoom-in" data-aos-delay="200"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/Pak. toyyib.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Moh. Toyyibul Anam, S.Kom
+                            </h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Wali Kelas Xl</p>
+                        </div>
+                    </div>
+
+                    <!-- Staf 2 -->
+                    <div data-aos="zoom-in" data-aos-delay="200"
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-500 h-20"></div>
+                        <div class="p-6 -mt-10">
+                            <div class="avatar-container w-20 h-20 mx-auto mb-4 rounded-full bg-white p-1 shadow-lg">
+                                <div class="w-full h-full rounded-full overflow-hidden">
+                                    <img src="assets/img/p. Fauzi.jpg" alt="Staf" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1 text-center">Mohammad Fauzi, S.Pd </h3>
+                            <p class="text-green-600 font-semibold text-center text-sm">Wali Kelas Xll</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+                            <img src="assets/img/LOGO_SMK-removebg-preview.png">
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold">SMK Wachid Hasyim Palengaan</h4>
+                            <p class="text-xs text-white-400">Religius, Berkarakter, Unggul</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="manajeman.html" class="hover:text-white transition">Manajemen</a></li>
+                        <li><a href="ppdb.html" class="hover:text-white transition">PPDB</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Program</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li>Teknik Komputer & Jaringan</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Palengaan, Pamekasan, Jawatimur</li>
+                        <li><i class="fas fa-phone mr-2"></i>0819-3925-7300</li>
+                        <li><i class="fas fa-envelope mr-2"></i>smkwh.plg@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white-800 pt-8 text-center text-white-400 text-sm">
+                <p>&copy; 2026 SMK Wachid Hasim. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script> function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("active");
+}
+</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>

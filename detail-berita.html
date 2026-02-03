@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Berita - SMK Wachid Hasyim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #10b981;
+            transform: translateY(-2px);
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+
+        .prose h3 {
+            color: #1f2937;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <script src="assets/js/navbar.js"></script>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/LOGO_SMK-removebg-preview.png" alt="Logo SMK Wachid Hasyim"
+                        class="w-12 h-12 object-contain">
+
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">SMK Wachid Hasyim Palengaan</h1>
+                        <p class="text-xs text-gray-600">Religius, Berkarakter, Unggul</p>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium">Beranda</a>
+                    <a href="Profil.html" class="nav-link text-gray-700 font-medium">Profil</a>
+                    <a href="manajeman.html" class="nav-link text-gray-700 font-medium">Manajeman</a>
+                    <a href="fasilitas.html" class="nav-link text-gray-700 font-medium">Fasilitas</a>
+                    <a href="berita.html" class="nav-link text-green-600 font-bold">Berita</a>
+                    <a href="ppdb.html" class="nav-link text-gray-700 font-medium">PPDB</a>
+                    <a href="kontak.html" class="nav-link text-gray-700 font-medium">Kontak</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700 hover:text-green-600 transition" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu hidden lg:hidden pb-4 transition-all duration-300">
+                <a href="index.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Beranda</a>
+                <a href="Profil.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Profil</a>
+                <a href="manajeman.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Manajeman</a>
+                <a href="fasilitas.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Fasilitas</a>
+                <a href="berita.html"
+                    class="block py-2 text-green-600 font-bold pl-4 border-l-4 border-green-600 bg-green-50">Berita</a>
+                <a href="ppdb.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">PPDB</a>
+                <a href="kontak.html"
+                    class="block py-2 text-gray-700 hover:text-green-600 pl-4 border-l-4 border-transparent hover:border-green-600">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <a href="berita.html" class="inline-flex items-center text-gray-600 hover:text-green-600 mb-6 transition">
+            <i class="fas fa-arrow-left mr-2"></i> Kembali ke Berita
+        </a>
+
+        <div id="articleContainer" class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hidden"
+            data-aos="fade-up">
+            <!-- Article content will be injected here -->
+            <div class="relative h-64 md:h-96 w-full">
+                <img id="newsImage" src="" alt="" class="w-full h-full object-cover">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white">
+                    <span id="newsCategory" class="category-badge mb-2"></span>
+                    <h1 id="newsTitle" class="text-2xl md:text-4xl font-bold leading-tight"></h1>
+                    <div class="flex items-center mt-4 text-sm md:text-base opacity-90">
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span id="newsDate"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 md:p-10">
+                <div id="newsContent" class="prose max-w-none text-lg">
+                    <!-- HTML Content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 404 / Loading State -->
+        <div id="notFound" class="text-center py-20 hidden">
+            <div class="text-gray-400 mb-4">
+                <i class="far fa-file-alt text-6xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Berita Tidak Ditemukan</h2>
+            <p class="text-gray-600 mb-6">Maaf, berita yang Anda cari tidak tersedia atau telah dihapus.</p>
+            <a href="berita.html" class="px-6 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition">
+                Kembali ke Berita
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+                            <img src="assets/img/LOGO_SMK-removebg-preview.png">
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold">SMK Wachid Hasyim Palengaan</h4>
+                            <p class="text-xs text-white-400">Religius, Berkarakter, Unggul</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="manajeman.html" class="hover:text-white transition">Manajemen</a></li>
+                        <li><a href="ppdb.html" class="hover:text-white transition">PPDB</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Program</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li>Teknik Komputer & Jaringan</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-white-400 text-sm">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Palengaan, Pamekasan, Jawatimur</li>
+                        <li><i class="fas fa-phone mr-2"></i>0819-3925-7300</li>
+                        <li><i class="fas fa-envelope mr-2"></i>smkwh.plg@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white-800 pt-8 text-center text-white-400 text-sm">
+                <p>&copy; 2026 SMK Wachid Hasim. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/news-data.js"></script>
+    <script>
+        AOS.init();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = parseInt(urlParams.get('id'));
+
+            const article = newsData.find(item => item.id === id);
+
+            if (article) {
+                // Show article container
+                const container = document.getElementById('articleContainer');
+                container.classList.remove('hidden');
+
+                // Populate data
+                document.title = `${article.title} - SMK Wachid Hasyim`;
+                document.getElementById('newsTitle').textContent = article.title;
+                document.getElementById('newsDate').textContent = article.date;
+                document.getElementById('newsImage').src = article.image;
+                document.getElementById('newsImage').alt = article.title;
+                document.getElementById('newsContent').innerHTML = article.content;
+
+                // Category Badge Color
+                const badge = document.getElementById('newsCategory');
+                badge.textContent = article.category;
+                const badgecolors = {
+                    'Pengumuman': 'bg-blue-500',
+                    'Kegiatan': 'bg-orange-500',
+                    'Prestasi': 'bg-green-600'
+                };
+                badge.classList.add(badgecolors[article.category] || 'bg-gray-500');
+
+            } else {
+                // Show 404
+                document.getElementById('notFound').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
