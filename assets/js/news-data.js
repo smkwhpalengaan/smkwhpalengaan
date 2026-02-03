@@ -1,76 +1,72 @@
 const newsData = [
     {
-        id: 1,
-        title: "Pendaftaran PPDB Tahun Ajaran 2026/2027 Telah Dibuka",
-        date: "28 Januari 2026",
-        category: "Pengumuman",
-        image: "assets/img/sekolah.jpeg",
-        excerpt: "SMK Wachid Hasyim kembali membuka pendaftaran peserta didik baru untuk tahun ajaran 2026/2027. Segera daftarkan diri Anda dan bergabunglah menjadi bagian dari keluarga besar kami.",
-        content: `
-            <p class="mb-4">SMK Wachid Hasyim Palengaan secara resmi membuka Penerimaan Peserta Didik Baru (PPDB) untuk Tahun Ajaran 2026/2027. Kami mengundang putra-putri terbaik bangsa untuk bergabung dan mengembangkan potensi diri di sekolah kami yang mengedepankan nilai-nilai religius, berkarakter, dan keunggulan kompetensi.</p>
-            
-            <h3 class="text-xl font-bold mb-2">Program Keahlian</h3>
-            <p class="mb-4">Kami membuka pendaftaran untuk kompetensi keahlian:</p>
-            <ul class="list-disc pl-5 mb-4">
-                <li>Teknik Komputer dan Jaringan (TKJ)</li>
-            </ul>
+    id: 1,
+    title: "Pelaksanaan Praktik Kerja Industri (Prakerin) Siswa SMK Wachid Hasyim Palengaan Pamekasan",
+    category: "Kegiatan",
+    image: "assets/img/prakrin.jpeg",
+    excerpt: "Siswa SMK Wachid Hasyim Palengaan Pamekasan mengikuti kegiatan Praktik Kerja Industri sebagai bentuk pembelajaran langsung di dunia kerja.",
+    content: `
+        <p class="mb-4">SMK Wachid Hasyim Palengaan Pamekasan melaksanakan kegiatan <strong>Praktik Kerja Industri (Prakerin)</strong> sebagai bagian dari program pembelajaran untuk meningkatkan kompetensi dan kesiapan siswa dalam menghadapi dunia kerja.</p>
 
-            <h3 class="text-xl font-bold mb-2">Waktu Pendaftaran</h3>
-            <p class="mb-4">
-                <strong>Gelombang 1:</strong> 1 Februari - 30 Maret 2026<br>
-                <strong>Gelombang 2:</strong> 1 April - 30 Mei 2026
-            </p>
+        <p class="mb-4">Kegiatan prakerin ini dilaksanakan mulai tanggal 29 Januari 2026 dengan melibatkan siswa dari berbagai jurusan yang ditempatkan di sejumlah dunia usaha dan dunia industri (DUDI) yang telah menjalin kerja sama dengan sekolah.</p>
 
-            <h3 class="text-xl font-bold mb-2">Syarat Pendaftaran</h3>
-            <ul class="list-disc pl-5 mb-4">
-                <li>Lulus SMP/MTs sederajat</li>
-                <li>Fotocopy Ijazah/SKL dilegalisir</li>
-                <li>Fotocopy Kartu Keluarga</li>
-                <li>Pas Foto 3x4 (4 lembar)</li>
-            </ul>
+        <h3 class="text-xl font-bold mb-2">Tujuan Kegiatan Prakerin</h3>
+        <ul class="list-disc pl-5 mb-4">
+            <li>Meningkatkan keterampilan dan pengalaman kerja siswa</li>
+            <li>Mengenalkan budaya dan etos kerja di dunia industri</li>
+            <li>Mengimplementasikan teori yang diperoleh di sekolah</li>
+            <li>Mempersiapkan siswa agar siap terjun ke dunia kerja</li>
+        </ul>
 
-            <p>Untuk informasi lebih lanjut, silakan hubungi panitia PPDB kami atau datang langsung ke sekretariat pendaftaran di SMK Wachid Hasyim Palengaan.</p>
-        `
-    },
+        <p class="mb-4">Kepala SMK Wachid Hasyim Palengaan Pamekasan menyampaikan bahwa kegiatan prakerin merupakan program penting dalam membentuk karakter, kedisiplinan, serta profesionalisme siswa.</p>
+
+        <p>Melalui kegiatan prakerin ini, diharapkan siswa mampu memperoleh pengalaman nyata, meningkatkan kompetensi keahlian, serta memiliki bekal yang kuat untuk melanjutkan pendidikan maupun memasuki dunia kerja setelah lulus.</p>
+    `
+},
     {
-        id: 2,
-        title: "Peringatan Hari Lahir SMK Wachid Hasyim",
-        date: "15 Januari 2026",
-        category: "Kegiatan",
-        image: "assets/img/sekolah-removebg-preview.png",
-        excerpt: "Kegiatan meriah dalam rangka memperingati hari lahir sekolah yang diisi dengan berbagai lomba dan pentas seni siswa.",
-        content: `
-            <p class="mb-4">Dalam rangka memperingati Hari Lahir (Harlah) yang ke-19, SMK Wachid Hasyim Palengaan menggelar serangkaian kegiatan meriah yang melibatkan seluruh warga sekolah, mulai dari siswa, guru, hingga staf karyawan.</p>
+    id: 2,
+    title: "Kunjungan Akreditasi SMK Wachid Hasyim Palengaan Pamekasan",
+    date: "29 Januari 2026",
+    category: "Kegiatan",
+    image: "assets/img/akreditasi.jpeg",
+    excerpt: "SMK Wachid Hasyim Palengaan Pamekasan menerima kunjungan tim asesor dalam rangka pelaksanaan akreditasi sekolah.",
+    content: `
+        <p class="mb-4">SMK Wachid Hasyim Palengaan Pamekasan melaksanakan kegiatan <strong>Kunjungan Akreditasi Sekolah</strong> sebagai bagian dari proses penilaian mutu pendidikan oleh Badan Akreditasi Nasional.</p>
 
-            <p class="mb-4">Acara puncak dilaksanakan pada tanggal 15 Januari 2026 di halaman utama sekolah. Kegiatan diawali dengan istighosah bersama sebagai wujud rasa syukur atas perjalanan sekolah yang terus berkembang hingga saat ini.</p>
+        <p class="mb-4">Kegiatan kunjungan akreditasi ini dilaksanakan pada tanggal 29 Januari 2026 dengan dihadiri oleh tim asesor, kepala sekolah, dewan guru, tenaga kependidikan, serta perwakilan siswa. Seluruh rangkaian kegiatan berjalan dengan tertib dan penuh kesiapan.</p>
 
-            <h3 class="text-xl font-bold mb-2">Rangkaian Kegiatan</h3>
-            <ul class="list-disc pl-5 mb-4">
-                <li>Lomba Kebersihan Kelas</li>
-                <li>Pentas Seni Siswa</li>
-                <li>Bazar Kewirausahaan</li>
-                <li>Santunan Anak Yatim</li>
-            </ul>
+        <h3 class="text-xl font-bold mb-2">Rangkaian Kegiatan Akreditasi</h3>
+        <ul class="list-disc pl-5 mb-4">
+            <li>Penyambutan Tim Asesor Akreditasi</li>
+            <li>Verifikasi Dokumen Administrasi Sekolah</li>
+            <li>Observasi Proses Pembelajaran</li>
+            <li>Peninjauan Sarana dan Prasarana</li>
+            <li>Wawancara dengan Pendidik dan Peserta Didik</li>
+        </ul>
 
-            <p>Kepala Sekolah berharap dengan bertambahnya usia, SMK Wachid Hasyim semakin solid dan mampu melahirkan lulusan-lulusan yang tidak hanya cerdas secara intelektual, tetapi juga matang secara spiritual dan emosional.</p>
-        `
-    },
+        <p class="mb-4">Kepala SMK Wachid Hasyim Palengaan Pamekasan menyampaikan bahwa kegiatan ini menjadi momentum penting untuk mengevaluasi dan meningkatkan kualitas layanan pendidikan di sekolah.</p>
+
+        <p>Melalui akreditasi ini, diharapkan SMK Wachid Hasyim Palengaan Pamekasan dapat terus meningkatkan mutu pendidikan serta menghasilkan lulusan yang unggul, berkarakter, dan siap bersaing di dunia kerja maupun dunia industri.</p>
+    `
+},
     {
-        id: 3,
-        title: "Juara 1 Lomba Kompetensi Siswa Tingkat Kabupaten",
-        date: "10 Desember 2025",
-        category: "Prestasi",
-        image: "assets/img/kepala.jpeg",
-        excerpt: "Selamat kepada siswa jurusan TKJ yang telah berhasil meraih Juara 1 dalam Lomba Kompetensi Siswa (LKS) tingkat Kabupaten Pamekasan.",
-        content: `
-            <p class="mb-4">Kabar membanggakan datang dari jurusan Teknik Komputer dan Jaringan (TKJ). Salah satu siswa terbaik kami, Ahmad Zaky, berhasil menyabet Juara 1 dalam ajang Lomba Kompetensi Siswa (LKS) tingkat Kabupaten Pamekasan tahun 2025.</p>
+    id: 3,
+    title: "Mahasiswa Raih Juara 1 Lomba Pidato Se-Madura di Universitas Islam Madura",
+    date: "10 Oktober 2025",
+    category: "Prestasi",
+    image: "assets/img/pidato.jpeg",
+    excerpt: "Prestasi membanggakan diraih dalam ajang Lomba Pidato (Se-Madura) yang diselenggarakan di Universitas Islam Madura.",
+    content: `
+        <p class="mb-4">Prestasi membanggakan kembali diraih dalam ajang <strong>Lomba Pidato (Se-Madura)</strong> yang diselenggarakan di <strong>Universitas Islam Madura (UIM)</strong>. Salah satu mahasiswa berhasil meraih <strong>Juara 1</strong> dan mengungguli peserta dari berbagai daerah di Madura.</p>
 
-            <p class="mb-4">Zaky berhasil mengungguli peserta dari berbagai SMK lain dalam bidang <em>IT Network Systems Administration</em>. Kemenangan ini mengantarkannya untuk mewakili Kabupaten Pamekasan di tingkat Provinsi Jawa Timur mendatang.</p>
+        <p class="mb-4">Dalam perlombaan tersebut, peserta dituntut untuk menyampaikan pidato dengan baik dan benar, disertai penguasaan materi, intonasi yang tepat, serta ekspresi yang meyakinkan. Penampilan juara pertama dinilai paling unggul oleh dewan juri karena mampu menyampaikan pesan dengan lugas, berisi, dan penuh makna.</p>
 
-            <h3 class="text-xl font-bold mb-2">Persiapan yang Matang</h3>
-            <p class="mb-4">Kepala Program Keahlian TKJ menyampaikan bahwa prestasi ini adalah buah dari kerja keras dan latihan intensif yang dilakukan selama 3 bulan terakhir. Dukungan penuh dari sekolah dan pembimbing juga menjadi faktor kunci keberhasilan ini.</p>
+        <h3 class="text-xl font-bold mb-2">Pelestarian Bahasa dan Budaya Madura</h3>
+        <p class="mb-4">Lomba pidato ini menjadi salah satu upaya untuk melestarikan bahasa dan budaya Madura di kalangan generasi muda. Selain itu, kegiatan ini juga melatih keberanian, kemampuan berbicara di depan umum, serta menanamkan nilai-nilai kearifan lokal.</p>
 
-            <p>Semoga prestasi ini dapat menjadi motivasi bagi siswa-siswi lain untuk terus berprestasi dan mengharumkan nama almamater tercinta.</p>
-        `
-    }
+        <p class="mb-4">Penyerahan piala dan penghargaan dilakukan secara langsung di lokasi kegiatan dan disaksikan oleh panitia, peserta, serta tamu undangan. Prestasi ini diharapkan dapat menjadi inspirasi bagi mahasiswa lainnya untuk terus berprestasi, baik di bidang akademik maupun non-akademik.</p>
+
+        <p>Keberhasilan ini menjadi bukti bahwa generasi muda Madura mampu bersaing, berprestasi, dan turut menjaga warisan budaya daerah di tengah perkembangan zaman.</p>
+    `
+}
 ];
